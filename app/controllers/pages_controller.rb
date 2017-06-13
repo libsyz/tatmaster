@@ -4,5 +4,11 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @locations = Artist.all.map { |a| a.location }.uniq
   end
 end
+
+
+
+
+
