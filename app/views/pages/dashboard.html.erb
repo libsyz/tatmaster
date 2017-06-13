@@ -1,0 +1,8 @@
+<h1> This is user's Dashboard</h1>
+
+
+<h2>You can search from dashboard! How cool is that?</h2>
+<%= form_tag("/artists", method: "get") do %>
+  <%= select_tag 'location', options_for_select(@locations) %>
+  <%= submit_tag "Search", class: 'btn btn-primary' %>
+<% end %>
