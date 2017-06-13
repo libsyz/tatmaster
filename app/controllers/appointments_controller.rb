@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to artist_path(@artist)
     else
-      render: new
+      render :new
     end
   end
 
