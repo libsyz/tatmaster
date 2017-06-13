@@ -1,0 +1,16 @@
+<h1><%=@artist.name%></h1>
+<h4><%= @artist.location %></h4>
+<%= link_to "Book me!", '#', class: "btn btn-danger"%>
+
+<h3>About <%= @artist.name %></h3>
+
+<p><%= Faker::Lorem.paragraph %></p>
+
+<h3><%= @artist.name %>'s portfolio</h3>
+
+<% image = Faker::Placeholdit.image("50x50", 'jpg')  %>
+
+<%= image_tag( "#{image}" , :alt => "rss feed") %>
+
+
+
