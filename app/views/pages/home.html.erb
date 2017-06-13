@@ -3,7 +3,7 @@
 
 
 
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag("/artists", method: "get") do %>
   <%= select_tag 'location', options_for_select(@locations) %>
   <%= submit_tag "Search", class: 'btn btn-primary' %>
 <% end %>
