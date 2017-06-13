@@ -1,39 +1,66 @@
 
-
 puts "creating seeds..."
 
+studios = []
+
+Tattoo.destroy_all
+Artist.destroy_all
+Studio.destroy_all
+
+
 5.times do
-  p studios = Studio.new(
+   studios << Studio.new(
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
     location: Faker::Address.street_name)
 end
 
-puts "done!"
+studios.each do |studio|
+  studio.save
+end
+
+puts "Studios created!"
+
+a_array = []
 
 15.times do
 
-  # n = Faker::Friends.character
-  # i = Faker::Hipster.sentence(3, false, 4)
+  n = Faker::Pokemon.name
+  i = Faker::Pokemon.name
   r = [100, 150, 300, 250].sample
   l = ["Barcelona", "Paris", "London", "Berlin", "Madrid", "Rome", "Geneva"].sample
 
-  p Artist.new(rate: r, location: l)
-
-
+  a = Artist.create(name: n, info: i, rate: r, location: l)
+  a_array << a
     #   t.string   "name"
     # t.text     "info"
     # t.integer  "rate"
     # t.integer  "location"
-
 end
 
+ p a_array
+
+puts "artists created!"
+tests = []
+  a_array.each do |artist|
+    artist.studio = studios.sample
+    artist.save!
+  end
+
+puts  "artists associated to studios!"
 
 45.times do
-  tat = { name: Faker::Pokemon.name,
-           description: Faker::Hipster.sentences(1),
-           style: Faker::Hipster.sentence(3)
-  }
-  p Tattoo.new(tat)
+  tat = Tattoo.create(name: Faker::Pokemon.name,
+           decription: Faker::Hipster.sentences(1),
+           style: Faker::Hipster.sentence(3) )
 
+
+
+  tat.artist = a_array.sample
+  tat.save!
 end
+  puts  "tattoos created!"
+
+
+  puts  "tattoos associated to artists!"
+
