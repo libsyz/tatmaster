@@ -12,5 +12,16 @@
 
 <%= image_tag( "#{image}" , :alt => "rss feed") %>
 
+<%= link_to "Leave a Review", new_artist_review_path(@artist) %>
 
+
+
+
+
+<h3>Reviews of <%=@artist.name  %></h3>
+<% @artist.reviews.each do |review| %>
+<%= review.content %>
+<%= review.rating %>
+<p>hhhhh</p>
+<% end %>
 
