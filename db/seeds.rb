@@ -1,8 +1,9 @@
 
+
 puts "creating seeds..."
 
 5.times do
-  studios = Studio.create(
+  p studios = Studio.new(
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
     location: Faker::Address.street_name)
@@ -27,3 +28,12 @@ puts "done!"
 
 end
 
+
+45.times do
+  tat = { name: Faker::Pokemon.name,
+           description: Faker::Hipster.sentences(1),
+           style: Faker::Hipster.sentence(3)
+  }
+  p Tattoo.new(tat)
+
+end
