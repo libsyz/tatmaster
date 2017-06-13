@@ -1,4 +1,3 @@
-require 'pry'
 class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
@@ -15,11 +14,12 @@ class ReviewsController < ApplicationController
       redirect_to @review.artist
     else
       render :new
-  end
+    end
 
-  private
+    private
 
-  def review_params
-    params.require(:review).permit(:content, :rating)
+    def review_params
+      params.require(:review).permit(:content, :rating)
+    end
   end
 end
