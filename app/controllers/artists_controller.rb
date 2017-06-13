@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   def index
-    @artists = Artist.group(params[:location])
+    @artists = Artist.all
   end
 
   def show
