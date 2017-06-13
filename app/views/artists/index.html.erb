@@ -1,6 +1,9 @@
 
 <% @artists.each do |artist| %>
 <% if artist.location == params[:location] %>
-<h2> <%= artist.name %></h2>
+<%= link_to artist.name, artist_path(artist.id) %>
 <% end %>
 <% end %>
+
+
+
