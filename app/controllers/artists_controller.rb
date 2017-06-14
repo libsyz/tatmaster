@@ -18,11 +18,10 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-    @artist2 = Artist.find(params[:location])
-    # @appointment = Appointment.new
+    # @artist2 = Artist.find(params[:location])
+    @appointment = Appointment.new
     # @studio = Studio.find(params[:studio_id])
     # @studio_coordinates = { lat: @studio.latitude, lng: @studio.longitude}
-    @artist2_coordinates = { lat: @artist2.latitude, lng: @artist2.longitude}
-    raise
+    @artist2_coordinates = { lat: @artist.latitude, lng: @artist.longitude}
   end
 end
