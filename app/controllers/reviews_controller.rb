@@ -7,7 +7,6 @@ class ReviewsController < ApplicationController
 
   def new
     @artist = Artist.find(params[:artist_id])
-
     @review = Review.new
   end
 
