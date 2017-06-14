@@ -1,19 +1,32 @@
-<h1> This is user's Dashboard</h1>
 
 
-<h2>You can search from dashboard! How cool is that?</h2>
-<%= form_tag("/artists", method: "get") do %>
-<%= select_tag 'location', options_for_select(@locations) %>
-<%= submit_tag "Search", class: 'btn btn-primary' %>
-<% end %>
+<div class="wrapper-dashboard">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center padded">
+        <h4> Welcome to your Dashboard</h4>
+        <h5> Filter your Appointments by City </h5>
+        <%= form_tag("/artists", method: "get") do %>
+        <%= select_tag 'location', options_for_select(@locations) %>
+        <%= submit_tag "Filter", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row dashboard-card">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <h4>Your Appointments </h4>
+        <% @appointments.each do |appointment| %>
+        <p>You have appointment with <%= appointment.artist.name %></p>
+        <p>Date of appointment: <%= appointment.appointment_date %></p>
+        <p>Time of appointment: <%= appointment.appointment_time %></p>
+        <p>Status: <%= appointment.status %></p>
+        <p> Sketch: <%= cl_image_tag appointment.photo.path, width: 200, height: 300, crop: :fill %> </p>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<h1>This is your appointments:</h1>
-<% @appointments.each do |appointment| %>
-<p>You have appointment with <%= appointment.artist.name %></p>
-<p>Date of appointment: <%= appointment.appointment_date %></p>
-<p>Time of appointment: <%= appointment.appointment_time %></p>
-<p>Status: <%= appointment.status %></p>
-<p> Sketch: <%= cl_image_tag appointment.photo.path, width: 200, height: 300, crop: :fill %> </p>
-
-<% end %>
