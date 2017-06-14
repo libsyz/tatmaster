@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+  include ArtistHelper
   skip_before_action :authenticate_user!
 
   def index
@@ -18,10 +19,8 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-    # @artist2 = Artist.find(params[:location])
     @appointment = Appointment.new
-    # @studio = Studio.find(params[:studio_id])
-    # @studio_coordinates = { lat: @studio.latitude, lng: @studio.longitude}
+    @time_slots = generate_slots(10, 18)
     @artist2_coordinates = { lat: @artist.latitude, lng: @artist.longitude}
   end
 end
