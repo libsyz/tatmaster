@@ -1,9 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner-landing-page">
+  <h1>Get Inked by top local artists</h1>
+  <h2>Discover new works and book an appointment</h2>
+  <div>
+  <%= form_tag("/artists", method: "get", class: 'form-banner') do %>
+  <%= select_tag 'location', options_for_select(@locations), class: 'form-control select-pages-home' %>
+  <%= submit_tag "Search", class: 'btn btn-danger' %>
+  <% end %>
+  </div>
+</div>
 
 
 
-<%= form_tag("/artists", method: "get") do %>
-  <%= select_tag 'location', options_for_select(@locations) %>
-  <%= submit_tag "Search", class: 'btn btn-primary' %>
-<% end %>

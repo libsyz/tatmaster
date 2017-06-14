@@ -1,0 +1,37 @@
+.banner-landing-page {
+  color: white;
+  text-align: center;
+  height: 80vh;
+  background-image:  url('http://bit.ly/2rgHMwB');
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    font-size: 48px;
+    margin: 0;
+  }
+  h2{
+    font-size: 36px;
+    margin: 10px;
+    margin-bottom: 30px;
+  }
+  .form-banner {
+    display: flex;
+  }
+}
+
+// .banner h1 {
+//   font-size: 50px;
+//   font-weight: bold;
+//   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+// }
+
+// .banner p {
+//   font-size: 20px;
+//   font-weight: lighter;
+//   color: rgba(255, 255, 255, 0.7);
+//   margin-bottom: 20px;
+// }
+
