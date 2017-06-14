@@ -17,7 +17,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'faker'
-gem 'bootstrap_datetimepicker'
+gem 'bootstrap-datepicker-rails'
 gem "geocoder"
 gem "gmaps4rails"
 source 'https://rails-assets.org' do
