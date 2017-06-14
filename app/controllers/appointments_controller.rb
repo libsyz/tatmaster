@@ -16,9 +16,10 @@ class AppointmentsController < ApplicationController
     end
   end
 
+
   private
 
   def appointment_params
-    params.require(:appointment).permit(:status, :appointment_date, :appointment_time)
+    params.require(:appointment).permit(:status, :appointment_date, :appointment_time, :photo)
   end
 end

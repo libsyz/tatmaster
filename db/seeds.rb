@@ -4,6 +4,7 @@ puts "creating seeds..."
 studios = []
 
 Tattoo.destroy_all
+Appointment.destroy_all
 Review.destroy_all
 Artist.destroy_all
 Studio.destroy_all

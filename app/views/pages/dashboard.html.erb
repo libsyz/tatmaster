@@ -3,16 +3,17 @@
 
 <h2>You can search from dashboard! How cool is that?</h2>
 <%= form_tag("/artists", method: "get") do %>
-  <%= select_tag 'location', options_for_select(@locations) %>
-  <%= submit_tag "Search", class: 'btn btn-primary' %>
+<%= select_tag 'location', options_for_select(@locations) %>
+<%= submit_tag "Search", class: 'btn btn-primary' %>
 <% end %>
 
 
 <h1>This is your appointments:</h1>
 <% @appointments.each do |appointment| %>
-  <p>You have appointment with <%= appointment.artist.name %></p>
-  <p>Date of appointment: <%= appointment.appointment_date %></p>
-  <p>Time of appointment: <%= appointment.appointment_time %></p>
-  <p>Status: <%= appointment.status %></p>
-  <br>
+<p>You have appointment with <%= appointment.artist.name %></p>
+<p>Date of appointment: <%= appointment.appointment_date %></p>
+<p>Time of appointment: <%= appointment.appointment_time %></p>
+<p>Status: <%= appointment.status %></p>
+<p> Sketch: <%= cl_image_tag appointment.photo.path, width: 200, height: 300, crop: :fill %> </p>
+
 <% end %>
