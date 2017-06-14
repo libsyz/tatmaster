@@ -5,12 +5,13 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-    @artist = artist.find(params[:artist_id])
+    @artist = Artist.find(params[:artist_id])
     @appointment.artist = @artist
+    @appointment.user = current_user
     if @appointment.save
-      redirect_to artist_path(@artist)
+      redirect_to dashboard_path
     else
-      render :new
+      render "artists/show"
     end
   end
 
@@ -19,6 +20,4 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:appointment_date, :status)
   end
-
-
 end

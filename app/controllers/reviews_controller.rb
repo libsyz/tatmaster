@@ -1,11 +1,12 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @reviews = Review.all
   end
 
   def new
     @artist = Artist.find(params[:artist_id])
-
     @review = Review.new
   end
 

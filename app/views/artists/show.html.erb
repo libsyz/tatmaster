@@ -1,6 +1,5 @@
 <h1><%=@artist.name%></h1>
 <h4><%= @artist.location %></h4>
-<%= link_to "Book me!", '#', class: "btn btn-danger"%>
 
 <h3>About <%= @artist.name %></h3>
 
@@ -14,14 +13,27 @@
 
 <%= link_to "Leave a Review", new_artist_review_path(@artist) %>
 
-
-
-
+<%= simple_form_for [@artist, @appointment] do |f| %>
+  <%= f.input :appointment_date, as: :datetime_local %>
+  <%= f.input :status %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
 
 <h3>Reviews of <%=@artist.name  %></h3>
 <% @artist.reviews.each do |review| %>
 <%= review.content %>
 <%= review.rating %>
-<p>hhhhh</p>
 <% end %>
+
+
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @flat_coordinates.to_json %>;
+      alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>
+
 

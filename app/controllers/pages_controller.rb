@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @locations = Artist.all.map { |a| a.location }.uniq
+    @appointments = current_user.appointments
   end
 end
 
