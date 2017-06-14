@@ -4,6 +4,7 @@ puts "creating seeds..."
 studios = []
 
 Tattoo.destroy_all
+Review.destroy_all
 Artist.destroy_all
 Studio.destroy_all
 
@@ -12,7 +13,7 @@ Studio.destroy_all
    studios << Studio.new(
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
-    location: Faker::Address.street_name)
+    location: Faker::Address.street_address)
 end
 
 studios.each do |studio|

@@ -18,6 +18,12 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'faker'
 gem 'bootstrap-datepicker-rails'
+gem "geocoder"
+gem "gmaps4rails"
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+gem 'omniauth-facebook'
 
 
 group :development, :test do
