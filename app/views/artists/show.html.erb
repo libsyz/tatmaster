@@ -14,8 +14,11 @@
 <%= link_to "Leave a Review", new_artist_review_path(@artist) %>
 
 <%= simple_form_for [@artist, @appointment] do |f| %>
-  <%= f.input :appointment_date, as: :datetime_local %>
-  <%= f.input :status %>
+  <%= f.input :appointment_date, as: :string, input_html: { class: 'datepicker' } %>
+  <div class="btn-group" data-toggle="buttons">
+  <%= f.collection_radio_buttons :appointment_time, @time_slots, :first, :last, item_wrapper_class: 'btn btn-sm btn-default' %>
+  </div>
+  <br><br>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
 
@@ -23,5 +26,20 @@
 <% @artist.reviews.each do |review| %>
 <%= review.content %>
 <%= review.rating %>
+<% end %>
+
+
+<% content_for(:after_js) do %>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker({
+    weekStart: 1,
+    todayBtn: true,
+    startDate: "today",
+    todayHighlight: true,
+    format: "dd/mm/yyyy"
+    });
+  });
+</script>
 <% end %>
 

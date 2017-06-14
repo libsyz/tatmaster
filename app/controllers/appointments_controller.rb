@@ -5,6 +5,7 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
+    @appointment.appointment_date = appointment_params[:appointment_date].to_date
     @artist = Artist.find(params[:artist_id])
     @appointment.artist = @artist
     @appointment.user = current_user
@@ -18,6 +19,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:appointment_date, :status)
+    params.require(:appointment).permit(:status, :appointment_date, :appointment_time)
   end
 end

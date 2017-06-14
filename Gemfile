@@ -17,7 +17,8 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'faker'
-gem 'bootstrap_datetimepicker'
+gem 'bootstrap-datepicker-rails'
+
 
 group :development, :test do
   gem 'binding_of_caller'
