@@ -2,12 +2,36 @@
   <h1>Get Inked by top local artists</h1>
   <h2>Discover new works and book an appointment</h2>
   <div>
-  <%= form_tag("/artists", method: "get", class: 'form-banner') do %>
-  <%= select_tag 'location', options_for_select(@locations), class: 'form-control select-pages-home' %>
-  <%= submit_tag "Search", class: 'btn btn-danger' %>
-  <% end %>
+    <%= form_tag("/artists", method: "get", class: 'form-banner') do %>
+    <%= select_tag 'location', options_for_select(@locations), class: 'form-control select-pages-home' %>
+    <%= submit_tag "Search", class: 'btn btn-danger' %>
+    <% end %>
   </div>
 </div>
+
+<div class="container margin-top-10">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <h2>What’s Inkd?</h2>
+      <h3>Location</h3>
+      <p>Travelling to a new city and want to keep
+       memory? It's easy with unique tattoo from
+       local masters you cand find anywhere.</p>
+       <h3>Artists</h3>
+       <p>Top artists willing to provide you best services
+        at a reasonable prices. Explore galleries of works
+        and filter by styles or rating.</p>
+        <h3>Feedback</h3>
+        <p>Like your new master? Give him a nice review and
+          follow his profile so if he moves to a different city
+          you will always know it first.</p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+        <img src="https://unsplash.it/500/460" />
+
+        </div>
+      </div>
+    </div>
 
 
 
