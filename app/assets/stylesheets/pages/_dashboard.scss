@@ -1,13 +1,23 @@
 
 
 .artist-info {
-  background-color: lightgrey;
+  padding: 10px 0px 10px 0px;
+  background-color: #F5F2F0;
   display: flex;
   justify-content: space-around;
   margin-bottom: 5px;
+  border-radius: 3px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
 }
 
 .artist-details {
+  width: 70%;
   display: flex;
   justify-content: space-around;
 }
@@ -17,7 +27,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .artist img {
@@ -26,7 +35,10 @@
 }
 
 .order-description {
-  background-color: lightgrey;
+  border-radius: 3px;
+  background-color: #F5F2F0;
+  padding: 10px;
+  margin-bottom: 10pxx;
 }
 
 .edit-cancel {
@@ -35,6 +47,43 @@
 }
 
 .edit-cancel .btn {
-  width: 80px;
   margin-left: 5px;
+}
+
+.sketches {
+    margin-top: 20px;
+    border-radius: 3px;
+    background-color: #F5F2F0;
+    padding: 10px 10px 10px 10px;
+  }
+
+.sketches img {
+  margin: 10px;
+  border-radius: 3px;
+  &:hover {
+    box-shadow: 0px 0px 12px 5px rgba(0,0,0,0.45);
+  }
+}
+
+.sketches-collection {
+  display: flex-wrap;
+}
+
+.sketches-button{
+  display:flex;
+  justify-content: center;
+}
+
+.sketches-button .btn {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 40%;
+}
+
+.beyond-header {
+  height: 50px;
+}
+
+.fa {
+  color: black;
 }
