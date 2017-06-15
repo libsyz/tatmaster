@@ -1,0 +1,40 @@
+
+
+.artist-info {
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.artist-details {
+  display: flex;
+  justify-content: space-around;
+}
+
+.artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.artist img {
+  width: 50px;
+  height: 50px;
+}
+
+.order-description {
+  background-color: lightgrey;
+}
+
+.edit-cancel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-cancel .btn {
+  width: 80px;
+  margin-left: 5px;
+}
