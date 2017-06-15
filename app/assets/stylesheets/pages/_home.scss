@@ -3,8 +3,15 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-.select-pages-home {
+ .select-pages-home {
   border-radius: 0;
   -webkit-appearance: none;
   width: 300px;
+  border: 0px solid transparent;
+}
+
+.btn-landing {
+  background-color: $brand-color;
+  border: 0px solid transparent;
+  width: 100px;
 }
