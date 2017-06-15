@@ -10,4 +10,8 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require materialize-form
+//= require fixedposmap
 //= require_tree .
+
+
+

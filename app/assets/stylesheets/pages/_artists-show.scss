@@ -1,10 +1,35 @@
-.wrapper-artists-show {
-  margin-left: 50px;
-  margin-right: 50px;
+// .wrapper-artists-show {
+//   margin-left: 100px;
+//   margin-right: 50px;
+//   margin-bottom: 100px;
+// }
+
+// .form-appointment {
+//  margin-bottom: 50px;
+// }
+
+
+// .header {
+//   width: 600px;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   margin: 0 auto;
+
+// }
+
+.artist-info {
+  margin-bottom: 50px;
 }
 
-.form-appointment {
- margin-bottom: 50px;
+.container {
+  position: relative;
+}
+
+.avatar-artist-show {
+ position: absolute;
+ top: 50px;
+ left: 60px;
 }
 
 
