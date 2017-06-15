@@ -10,14 +10,14 @@
           <h4><%= @artist.location %></h4>
 
           <ul class="list-inline">
-          <% if @artist.rating  %>
+            <% if @artist.rating  %>
             <% @artist.rating.times do  %>
-              <li><i class="fa fa-star" aria-hidden="true" style="color: black"></i></li>
-              <% end %>
-              <% (5 - @artist.rating).times do %>
-              <li><i class="fa fa-star-o" aria-hidden="true" style="color: black"></i></li>
+            <li><i class="fa fa-star" aria-hidden="true" style="color: black"></i></li>
             <% end %>
-          <% end %>
+            <% (5 - @artist.rating).times do %>
+            <li><i class="fa fa-star-o" aria-hidden="true" style="color: black"></i></li>
+            <% end %>
+            <% end %>
           </ul>
 
 
@@ -36,19 +36,19 @@
 <% image = Faker::Placeholdit.image("50x50", 'jpg')  %>
 <div class="container text-center">
   <div class ="row">
-    <img src="https://unsplash.it/346x123" width="200px">
-    <img src="https://unsplash.it/348x123" width="200px">
-    <img src="https://unsplash.it/343x123" width="200px">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/0a/68/91/0a68918afbff7a5ececc4e428bd765f1.jpg" width="200px" height="200px">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/58/dc/3e/58dc3e227487845e385b6994872843cb.jpg" width="200px" height="200px">
+    <img src="https://s-media-cache-ak0.pinimg.com/originals/9d/47/c1/9d47c11896fba664763cfb4e58553a89.jpg" width="200px" height="200px">
   </div>
   <div class="row">
-    <img src="https://unsplash.it/349x123" width="200px">
-    <img src="https://unsplash.it/341x123" width="200px" alt="">
-    <img src="https://unsplash.it/342x123" width="200px">
+    <img src="https://static1.squarespace.com/static/56a3c2a4c647ade23fdcce47/56c33d407da24f852dcc0942/56c33e62d51cd4074a311bba/1455636086809/IMG_3607.JPG" width="200px" height="200px">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/cd/e8/e5/cde8e51614bffa8f21cca3c5082a0650.jpg" width="200px" height="200px">
+    <img src="http://static.boredpanda.com/blog/wp-content/uploads/2016/12/gustav-klimt-tattoo-3-5845196236dba__700.jpg" width="200px" height="200px">
   </div>
   <div class="row">
-    <img src="https://unsplash.it/312x123" width="200px">
-    <img src="https://unsplash.it/356x123" width="200px">
-    <img src="https://unsplash.it/378x123" width="200px">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/b9/01/ea/b901eaf0940c269b4bee7b5256f46e2f.jpg" width="200px" height="200px">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/34/65/54/346554ff16ef029254c3472ede7e7799.jpg" width="200px" height="200px">
+    <img src="https://s-media-cache-ak0.pinimg.com/originals/8f/8f/7e/8f8f7ed11e440d14cae6d8a5b4ef2bc7.jpg" width="200px" height="200px">
   </div>
 </div>
 
