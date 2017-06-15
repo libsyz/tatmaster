@@ -3,3 +3,31 @@
   margin-right: 50px;
   margin-top: 50px;
 }
+
+.search-form {
+  display: flex;
+  width: 400px;
+  // justify-content: center;
+  // flex-direction: column;
+}
+
+.margin-top-100px {
+  margin-top: 100px;
+}
+
+.search-form-select {
+  width: 300px;
+  height: 40px;
+  color: black;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+.btn-search {
+  text-decoration: none;
+  color: white;
+  background-color: #C62828;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}

@@ -1,13 +1,13 @@
 <!-- <div class="wrapper-artists-show" >
   <div class="container-fluid"> -->
     <div class="container">
-      <div class="row">
+      <div class="row margin-top-100px">
         <div class="header col-xs-offset-2 col-xs-3">
           <img src="https://unsplash.it/423x578" class="avatar-xl avatar-artist-show">
         </div>
         <div class="artist-info col-xs-6">
-          <h1><%=@artist.name%></h1>
-          <h4><%= @artist.location %></h4>
+          <h2><%=@artist.name%></h2>
+          <h5><%= @artist.location %></h5>
 
           <ul class="list-inline">
           <% if @artist.rating  %>
@@ -21,7 +21,7 @@
           </ul>
 
 
-          <h3>About <%= @artist.name %></h3>
+          <h4>About <%= @artist.name %></h4>
           <p><%= Faker::Lorem.paragraph %></p>
           <a href="#" class="btn btn-lg btn-success"
           data-toggle="modal"
