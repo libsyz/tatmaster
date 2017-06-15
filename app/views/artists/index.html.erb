@@ -1,19 +1,17 @@
-
-
+<div class="row margin-top-100px">
+  <div class="col s6 offset-s4">
+  <%= form_tag "/artists", method: "get", class: 'search-form z-depth-1' do %>
+   <%= select_tag 'location', options_for_select(@locations), class: 'search-form-select' %>
+   <%= submit_tag "Discover Art", class: 'btn-search' %>
+   <% end %>
+ </div>
+</div>
 <div class="wrapper-artists-index">
   <!-- Parent container-fluid to avoid large paddings on sides -->
   <div class="container-fluid">
 
     <!-- search bar on this page also -->
-    <div class="search">
 
-      <%= form_tag("/artists", method: "get") do %>
-      <%= select_tag 'location', options_for_select(@locations) %>
-      <%= submit_tag "Search", class: 'btn btn-danger' %>
-      <% end %>
-
-
-    </div>
 
     <div class="row">
       <!-- Left side of screen, cards go here in a nested grid -->
@@ -34,7 +32,7 @@
                   <% end %>
                 </div>
                 <div class="col-xs-12 col-md-8">
-                <div class="row flexed" >
+                  <div class="row flexed" >
                     <div class="col-xs-12 col-margin-top col-1">
                       <p>Recent work</p>
                     </div>
@@ -67,7 +65,7 @@
 
 
 
-   <div id="map"></div>
+        <div id="map"></div>
 
 
 
@@ -94,7 +92,7 @@
       }
     });
   });
- </script>
+</script>
 
 
 <% end %>
