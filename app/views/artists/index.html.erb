@@ -1,11 +1,15 @@
-<div class="row margin-top-100px">
-  <div class="col s6 offset-s4">
-  <%= form_tag "/artists", method: "get", class: 'search-form z-depth-1' do %>
-   <%= select_tag 'location', options_for_select(@locations), class: 'search-form-select' %>
-   <%= submit_tag "Discover Art", class: 'btn-search' %>
-   <% end %>
- </div>
+
+<div class="container background-white">
+  <div class="row">
+    <div class="col s6 offset-s4  background-white  margin-top-100px">
+      <%= form_tag "/artists", method: "get", class: 'fixed search-form z-depth-1' do %>
+      <%= select_tag 'location', options_for_select(@locations), class: 'search-form-select' %>
+      <%= submit_tag "Discover Art", class: 'btn-search' %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
 <div class="wrapper-artists-index">
   <!-- Parent container-fluid to avoid large paddings on sides -->
   <div class="container-fluid">
@@ -25,16 +29,16 @@
             <div class="card-artists-index">
               <div class="row">
                 <div class="col-xs-12 col-md-4 col-margin-top" style="margin-top: 43px">
-                  <%= image_tag "http://unsplash.it/100?random" %>
+                <%= image_tag "http://unsplash.it/100/100" %>
                   <br>
                   <ul class="list-inline">
                     <% if artist.rating  %>
-                      <% artist.rating.times do  %>
-                        <li><i class="fa fa-star" aria-hidden="true" style="color: black"></i></li>
-                      <% end %>
-                      <% (5 - artist.rating).times do %>
-                      <li><i class="fa fa-star-o" aria-hidden="true" style="color: black"></i></li>
-                      <% end %>
+                    <% artist.rating.times do  %>
+                    <li><i class="fa fa-star" aria-hidden="true" style="color: black"></i></li>
+                    <% end %>
+                    <% (5 - artist.rating).times do %>
+                    <li><i class="fa fa-star-o" aria-hidden="true" style="color: black"></i></li>
+                    <% end %>
                     <% end %>
                   </ul>
                 </div>
@@ -44,10 +48,10 @@
                       <p>Recent work</p>
                     </div>
                     <div class="col-xs-12 col-2">
-                      <%= image_tag "https://unsplash.it/100?random" %>
-                      <%= image_tag "http://unsplash.it/100?random" %>
-                      <%= image_tag "http://unsplash.it/100?random" %>
-                      <%= image_tag "http://unsplash.it/100?random" %>
+                      <%= image_tag "https://unsplash.it/100/100" %>
+                      <%= image_tag "http://unsplash.it/100/100" %>
+                      <%= image_tag "http://unsplash.it/100/100" %>
+                      <%= image_tag "http://unsplash.it/100/100" %>
                     </div>
                     <div class="col-xs-12 col-margin-bottom col-margin-top col-3" >
                       <%= link_to "profile",artist_path(artist.id), class: "btn btn-danger" %>
