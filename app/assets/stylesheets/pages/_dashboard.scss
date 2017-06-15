@@ -25,5 +25,16 @@
   height: 50px;
 }
 
-.appointment-status {
+.order-description {
+  background-color: lightgrey;
+}
+
+.edit-cancel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-cancel .btn {
+  width: 80px;
+  margin-left: 5px;
 }
