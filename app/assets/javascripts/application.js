@@ -7,4 +7,7 @@
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require turbolinks
+//= require materialize-sprockets
+//= require materialize-form
 //= require_tree .

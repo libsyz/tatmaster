@@ -2,16 +2,19 @@
   <h1>Get Inked by top local artists</h1>
   <h2>Discover new works and book an appointment</h2>
   <div>
-    <%= form_tag("/artists", method: "get", class: 'form-banner') do %>
-    <%= select_tag 'location', options_for_select(@locations), class: 'form-control select-pages-home' %>
+
+    <%= form_tag "/artists", method: "get", class: 'form-banner' do %>
+    <%= select_tag 'location', options_for_select(@locations), class: 'select-pages-home' %>
     <%= submit_tag "Discover Art", class: 'btn-landing' %>
     <% end %>
+
+
   </div>
 </div>
 
 <div class="container">
   <div class="row margin-top-20">
-    <div class="col-xs-12 col-md-5">
+    <div class="col s12 l6">
       <h2>What’s Inkd?</h2>
       <h3>Location</h3>
       <p>Travelling to a new city and want to keep
@@ -26,11 +29,12 @@
           follow his profile so if he moves to a different city
           you will always know it first.</p>
         </div>
-        <div class="col-xs-12 col-md-5 col-md-offset-1">
-          <img src="https://unsplash.it/500/460" class="center-block img-rsponsive" />
+        <div class="col s12 l6 margin-top-20">
+          <img src="https://unsplash.it/500/460" class="z-depth-2 center-block img-rsponsive" />
         </div>
       </div>
     </div>
+
 
 
 
