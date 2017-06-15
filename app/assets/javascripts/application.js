@@ -12,6 +12,3 @@
 //= require materialize-form
 //= require fixedposmap
 //= require_tree .
-
-
-
