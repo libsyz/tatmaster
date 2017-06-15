@@ -15,4 +15,11 @@
 @import "pages/index";
 
 // Bootstrap datepicker
- @import 'bootstrap-datepicker';
+@import 'bootstrap-datepicker';
+
+// Materialize gem
+@import "materialize/components/color";
+$primary-color: color("red", "darken-2") !default;
+$secondary-color: color("red", "darken-3") !default;
+@import "materialize";
+
