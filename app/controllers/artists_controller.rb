@@ -23,4 +23,5 @@ class ArtistsController < ApplicationController
     @time_slots = generate_slots(10, 18)
     @artist2_coordinates = { lat: @artist.latitude, lng: @artist.longitude}
   end
+
 end

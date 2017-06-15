@@ -1,33 +1,93 @@
-<div class="wrapper-artists-show" >
-  <div class="container-fluid">
-    <h1><%=@artist.name%></h1>
-    <h4><%= @artist.location %></h4>
+<!-- <div class="wrapper-artists-show" >
+  <div class="container-fluid"> -->
+    <div class="container">
+      <div class="row">
+        <div class="header col-xs-offset-2 col-xs-3">
+          <img src="https://unsplash.it/423x578" class="avatar-xl avatar-artist-show">
+        </div>
+        <div class="artist-info col-xs-6">
+          <h1><%=@artist.name%></h1>
+          <h4><%= @artist.location %></h4>
 
-    <h3>About <%= @artist.name %></h3>
+          <ul class="list-inline">
+          <% if @artist.rating  %>
+            <% @artist.rating.times do  %>
+              <li><i class="fa fa-star" aria-hidden="true" style="color: black"></i></li>
+              <% end %>
+              <% (5 - @artist.rating).times do %>
+              <li><i class="fa fa-star-o" aria-hidden="true" style="color: black"></i></li>
+            <% end %>
+          <% end %>
+          </ul>
 
-    <p><%= Faker::Lorem.paragraph %></p>
 
-    <h3><%= @artist.name %>'s portfolio</h3>
+          <h3>About <%= @artist.name %></h3>
+          <p><%= Faker::Lorem.paragraph %></p>
+          <a href="#" class="btn btn-lg btn-success"
+          data-toggle="modal"
+          data-target="#basicModal">Book an appointment</a>
+        </div>
+      </div>
+    </div>
+ <!--  </div>
 
-    <% image = Faker::Placeholdit.image("50x50", 'jpg')  %>
+</div> -->
 
-    <%= image_tag( "#{image}" , :alt => "rss feed") %>
+<% image = Faker::Placeholdit.image("50x50", 'jpg')  %>
+<div class="container text-center">
+  <div class ="row">
+    <img src="https://unsplash.it/346x123" width="200px">
+    <img src="https://unsplash.it/348x123" width="200px">
+    <img src="https://unsplash.it/343x123" width="200px">
+  </div>
+  <div class="row">
+    <img src="https://unsplash.it/349x123" width="200px">
+    <img src="https://unsplash.it/341x123" width="200px" alt="">
+    <img src="https://unsplash.it/342x123" width="200px">
+  </div>
+  <div class="row">
+    <img src="https://unsplash.it/312x123" width="200px">
+    <img src="https://unsplash.it/356x123" width="200px">
+    <img src="https://unsplash.it/378x123" width="200px">
   </div>
 </div>
 
-<div class="row form-appointment">
-  <div class="col-xs-4 col-xs-offset-4">
-    <%= simple_form_for [@artist, @appointment] do |f| %>
-    <%= f.input :appointment_date, as: :string, input_html: { class: 'datepicker' } %>
-    <div class="btn-group" data-toggle="buttons">
-      <%= f.collection_radio_buttons :appointment_time, @time_slots, :first, :last, item_wrapper_class: 'btn btn-sm btn-default' %>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
+        <h4 class="modal-title" id="myModalLabel">Book an appointment</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row form-appointment">
+          <div class="col-xs-4 col-xs-offset-4">
+            <%= simple_form_for [@artist, @appointment] do |f| %>
+            <%= f.input :appointment_date, as: :string, input_html: { class: 'datepicker' } %>
+            <div class="btn-group" data-toggle="buttons">
+              <%= f.collection_radio_buttons :appointment_time, @time_slots, :first, :last, item_wrapper_class: 'btn btn-sm btn-default' %>
+            </div>
+
+            <%= f.input :photo, as: :attachinary %>
+
+            <br><br>
+            <%= f.button :submit, class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
-
-    <%= f.input :photo, as: :attachinary %>
-
-    <br><br>
-    <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
   </div>
 </div>
 
@@ -35,11 +95,22 @@
 
 <div class="text-center">
   <h3>Reviews of <%=@artist.name  %></h3>
-  <% @artist.reviews.each do |review| %>
-  <%= review.content %>
-  <%= review.rating %>
-  <% end %>
   <%= link_to "Leave a Review", new_artist_review_path(@artist) %>
+  <div>
+    <% @artist.reviews.each do |review| %>
+    <%= review.content %>
+    <ul class="list-inline">
+      <% review.rating.times do %>
+      <li><i class="fa fa-star" aria-hidden="true" style="color: black"></i></li>
+      <% end %>
+      <% (5 - review.rating).times do %>
+      <li><i class="fa fa-star-o" aria-hidden="true" style="color: black"></i></li>
+      <% end %>
+      <br>
+      <br>
+    </ul>
+    <% end %>
+  </div>
 </div>
 
 
