@@ -1,77 +1,46 @@
 
 
-<div class="wrapper-dashboard">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1 padded text-center">
-        <h4> Your Appointments</h4>
-        <div class="dashboard-filter">
-          <div class="user-info">
-            <img src="http://www.unsplash.it/50/50" class="img-circle" alt="user_avatar">
-            <h6> <%= 'Current User Name' %></h6>
-          </div>
-          <div class="filter">
-            <h5> Filter your Appointments by City </h5>
-            <%= form_tag("/artists", method: "get") do %>
-            <%= select_tag 'location', options_for_select(@locations) %>
-            <%= submit_tag "Filter", class: 'btn btn-primary' %>
-            <% end %>
-          </div>
+  <div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="artist-info">
+      <div class="artist-details">
+        <div class="artist">
+          <img src="http://www.unsplash.it/50/50" class="img-circle" alt="">
+          Artist Name
         </div>
+        <div class="details">
+        <ul>
+       <li> City: Barcelona </li>
+       <li> Address: Ink Studio Gracia </li>
+       <li> Artist's work </li>
+        </ul>
+        </div>
+      </div>
+      <div class="appointment-status">
+        <p> Status: Pending </p>
+        <p> Quote: 300.00 $ </p>
       </div>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="">Order description: <br>
+    This is a really cool tattoo that will change my life. I hope to get
+    a lot of attention by this tattoo, the attention I've always been
+    neglected
+    </div>
+    <div>
+    Sketches
 
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1 text-center">
-        <div class="dashboard-card">
-          <div class="dashboard-card-section text-center">
-           <h6> Your Appointment with </h6>
-           <img src="http://www.unsplash.it/50/50" class="img-circle" alt="">
-           <h6> Artist name</h6>
-         </div>
-         <div class="dashboard-card-section">
-          <div class="dashboard-card-appointment-info">
-            <div class="appointment-logistics">
-             <h6>Date: </h6>
-             <h6>Time: </h6>
-             <h6>Location: </h6>
-
-           </div>
-           <div>
-           <div class="dashboard-buttons">
-              <div class="btn btn-info">  Edit   </div>
-              <div class="btn btn-danger"> Cancel  </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-      <div class="dashboard-card-section">
-        <div class="dashboard-action">
-          <a href="">
-          <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-          Upload a Sketch
-          </a>
-        </div>
-        <div class="dashboard-action">
-          <a href="">
-          <i class="fa fa-eye" aria-hidden="true"></i>
-          See your Sketches
-          </a>
-        </div>
-        <div class="dashboard-action">
-          <a href="">
-          <i class="fa fa-commenting-o"></i>
-          Message Artist
-
-</a>        </div>
-      </div>
     </div>
 
   </div>
 </div>
 
+
+
+<!--
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2 text-center">
 
@@ -85,7 +54,7 @@
 
   </div>
 </div>
-</div>
-</div>
+
+</div> -->
 
 
