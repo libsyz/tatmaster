@@ -7,10 +7,10 @@
 }
 
 .card-artists-index {
-  height: 100px;
+  height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
-  color: white;
+  color: black;
   position: relative;
   background-color: #f9f9f9;
   margin-bottom: 10px;
@@ -39,7 +39,7 @@
 }
 .card-description p {
   font-size: 13px;
-  }
+}
 .card-link {
   position: absolute;
   top: 0;
@@ -53,3 +53,44 @@
 .card-link:hover{
   opacity: 0.1;
 }
+
+.col-margin-top{
+  margin-top: 10px;
+}
+
+.col-margin-bottom{
+  margin-bottom: 10px;
+}
+
+
+.col-xs-12{
+  text-align: center
+}
+
+.col-padding-top{
+   padding-top: 10px;
+}
+
+// .flexed{
+//   display: flex;
+//   flex-direction: column-reverse;
+
+// justify-content: space-between;
+// }
+
+
+#map{
+  width: 500px;
+  height: 600px;
+  margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+

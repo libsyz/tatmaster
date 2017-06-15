@@ -1,6 +1,20 @@
+
+
 <div class="wrapper-artists-index">
   <!-- Parent container-fluid to avoid large paddings on sides -->
   <div class="container-fluid">
+
+    <!-- search bar on this page also -->
+    <div class="search">
+
+      <%= form_tag("/artists", method: "get") do %>
+      <%= select_tag 'location', options_for_select(@locations) %>
+      <%= submit_tag "Search", class: 'btn btn-danger' %>
+      <% end %>
+
+
+    </div>
+
     <div class="row">
       <!-- Left side of screen, cards go here in a nested grid -->
       <div class="col-xs-12 col-md-7">
@@ -11,7 +25,31 @@
           <div class="col-xs-12">
             <!-- Card -->
             <div class="card-artists-index">
-              <%= link_to artist.name, artist_path(artist.id) %>
+              <div class="row">
+                <div class="col-xs-12 col-md-4 col-margin-top" style="margin-top: 43px">
+                  <%= image_tag "http://unsplash.it/100?random" %>
+                  <br>
+                  <% 5.times do %>
+                  <i class="fa fa-star margin-top col-padding-top"></i>
+                  <% end %>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                <div class="row flexed" >
+                    <div class="col-xs-12 col-margin-top col-1">
+                      <p>Recent work</p>
+                    </div>
+                    <div class="col-xs-12 col-2">
+                      <%= image_tag "https://unsplash.it/100?random" %>
+                      <%= image_tag "http://unsplash.it/100?random" %>
+                      <%= image_tag "http://unsplash.it/100?random" %>
+                      <%= image_tag "http://unsplash.it/100?random" %>
+                    </div>
+                    <div class="col-xs-12 col-margin-bottom col-margin-top col-3" >
+                      <%= link_to "profile",artist_path(artist.id), class: "btn btn-danger" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <% end %>
@@ -21,8 +59,17 @@
       <!-- Right side of screen, map goes here -->
       <div class="col-xs-12 col-md-5">
 
-      <!-- Div to draw a map in -->
-      <div id="map" style="width: 100%; height: 600px;"></div>
+        <!-- Div to draw a map in -->
+
+
+
+
+
+
+
+   <div id="map"></div>
+
+
 
       </div>
     </div>
@@ -47,5 +94,8 @@
       }
     });
   });
-</script>
+ </script>
+
+
 <% end %>
+

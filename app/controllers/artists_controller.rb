@@ -4,6 +4,7 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.all
+    @locations = Artist.all.map { |a| a.location }.uniq
     # @studio = Studio.where.not(latitude: nil, longitude: nil)
     @artist2 = Artist.where.not(latitude: nil, longitude: nil)
     @artist2.each do |artist|
