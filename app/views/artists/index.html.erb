@@ -29,12 +29,19 @@
                 <div class="col-xs-12 col-md-4 col-margin-top" style="margin-top: 43px">
                   <%= image_tag "http://unsplash.it/100?random" %>
                   <br>
-                  <% 5.times do %>
-                  <i class="fa fa-star margin-top col-padding-top"></i>
-                  <% end %>
+                  <ul class="list-inline">
+                    <% if artist.rating  %>
+                      <% artist.rating.times do  %>
+                        <li><i class="fa fa-star" aria-hidden="true" style="color: black"></i></li>
+                      <% end %>
+                      <% (5 - artist.rating).times do %>
+                      <li><i class="fa fa-star-o" aria-hidden="true" style="color: black"></i></li>
+                      <% end %>
+                    <% end %>
+                  </ul>
                 </div>
                 <div class="col-xs-12 col-md-8">
-                <div class="row flexed" >
+                  <div class="row flexed" >
                     <div class="col-xs-12 col-margin-top col-1">
                       <p>Recent work</p>
                     </div>
@@ -67,7 +74,7 @@
 
 
 
-   <div id="map"></div>
+        <div id="map"></div>
 
 
 
@@ -94,7 +101,7 @@
       }
     });
   });
- </script>
+</script>
 
 
 <% end %>
