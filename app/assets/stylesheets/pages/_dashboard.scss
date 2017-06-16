@@ -94,14 +94,8 @@
 }
 
 
-.attachinary.optional {
-    font-weight: 700;
-    color: #1c1c1c;
-    background-color: white;
-    display: inline-block;
-    cursor: pointer;
-    // padding: 15px;
-    border-radius: 2px;
+label.attachinary.optional {
+  color: transparent;
 }
 
 // .attachinary.optional:focus ,
