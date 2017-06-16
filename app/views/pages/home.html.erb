@@ -1,10 +1,15 @@
+
+<%     @l_array = ["Barcelona", "Paris", "London", "Berlin", "Madrid", "Rome", "Geneva"]
+ %>
+
+
 <div class="banner-landing-page">
   <h1>Get Inked by top local artists</h1>
   <h2>Discover new works and book an appointment</h2>
   <div>
 
     <%= form_tag "/artists", method: "get", class: 'form-banner' do %>
-    <%= select_tag 'location', options_for_select(@locations), class: 'select-pages-home' %>
+    <%= select_tag 'location', options_for_select(@l_array), class: 'select-pages-home' %>
     <%= submit_tag "Discover Art", class: 'btn-landing' %>
     <% end %>
 

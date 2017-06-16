@@ -3,7 +3,8 @@
   <div class="row">
     <div class="col s6 offset-s4  background-white  margin-top-100px">
       <%= form_tag "/artists", method: "get", class: 'fixed search-form z-depth-1' do %>
-      <%= select_tag 'location', options_for_select(@locations), class: 'search-form-select' %>
+      <%= select_tag 'location', options_for_select(@l_array), class: 'search-form-select' %>
+
       <%= submit_tag "Discover Art", class: 'btn-search' %>
       <% end %>
     </div>
@@ -22,15 +23,17 @@
       <div class="col-xs-12 col-md-7">
         <div class="row">
           <% @artists.each do |artist| %>
-          <% if artist.location == params[:location] %>
+          <% if artist.location.split(" ")[-1] == params[:location] %>
           <!-- col for each card -->
           <div class="col-xs-12">
             <!-- Card -->
             <div class="card-artists-index">
               <div class="row">
-                <div class="col-xs-12 col-md-4 col-margin-top" style="margin-top: 43px">
-                <%= image_tag "http://unsplash.it/100/100" %>
+                <div class="col-xs-12 col-md-4" style="margin-top: 30px">
+                <%= image_tag "http://assets.rebelcircus.com/blog/wp-content/uploads/2015/05/evancheesepicweb.jpg", class: "image-rect" %>
                   <br>
+                  <%= link_to artist.name, artist_path(artist.id), class: "link-black" %>
+
                   <ul class="list-inline">
                     <% if artist.rating  %>
                     <% artist.rating.times do  %>
@@ -43,19 +46,17 @@
                   </ul>
                 </div>
                 <div class="col-xs-12 col-md-8">
-                  <div class="row flexed" >
+                  <div class="row" >
                     <div class="col-xs-12 col-margin-top col-1">
                       <p>Recent work</p>
                     </div>
                     <div class="col-xs-12 col-2">
-                      <%= image_tag "https://unsplash.it/100/100" %>
-                      <%= image_tag "http://unsplash.it/100/100" %>
-                      <%= image_tag "http://unsplash.it/100/100" %>
-                      <%= image_tag "http://unsplash.it/100/100" %>
+                      <%= image_tag "https://s-media-cache-ak0.pinimg.com/originals/9d/47/c1/9d47c11896fba664763cfb4e58553a89.jpg", class: "image-squre" %>
+                      <%= image_tag "https://s-media-cache-ak0.pinimg.com/736x/20/f5/37/20f537bd1c921b36520f241afb5d7a21.jpg", class: "image-squre" %>
+                      <%= image_tag "https://s-media-cache-ak0.pinimg.com/736x/86/4a/b1/864ab15ca8fce9158f77083d16ae6908.jpg", class: "image-squre" %>
+                      <%= image_tag "https://s-media-cache-ak0.pinimg.com/736x/8a/12/17/8a12176e22559abb4a58c087f2dc265f.jpg", class: "image-squre" %>
                     </div>
-                    <div class="col-xs-12 col-margin-bottom col-margin-top col-3" >
-                      <%= link_to "profile",artist_path(artist.id), class: "btn btn-danger" %>
-                    </div>
+
                   </div>
                 </div>
               </div>

@@ -7,14 +7,17 @@ class ArtistsController < ApplicationController
     @locations = Artist.all.map { |a| a.location }.uniq
     # @studio = Studio.where.not(latitude: nil, longitude: nil)
     @artist2 = Artist.where.not(latitude: nil, longitude: nil)
-    @artist2.each do |artist|
-      if artist.location == params[:location]
-        @hash = Gmaps4rails.build_markers(artist) do |flat, marker|
+    @artist_excluded = @artist2.select { |artist| artist.location.split(" ")[-1] == params[:location] }
+        # if artist.location.split(" ")[-1] == params[:location]
+        @hash = Gmaps4rails.build_markers(@artist_excluded) do |flat, marker|
           marker.lat flat.latitude
           marker.lng flat.longitude
         end
-      end
-    end
+
+
+    @l_array = ["Barcelona", "Paris", "London", "Berlin", "Madrid", "Rome", "Geneva"]
+
+
   end
 
 
