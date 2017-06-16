@@ -2,6 +2,8 @@
 <div class="beyond-header">
 </div>
 
+<% @appointments.each do |appointment| %>
+
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2 text-center">
     <h4>Your Next Appointment </h4>
@@ -14,17 +16,19 @@
       <div class="artist-details">
         <div class="artist">
           <img src="http://www.unsplash.it/200/200" class="avatar-xl" alt="">
-          Artist Name
+          <%= appointment.artist.name %>
         </div>
         <div class="details text-center">
         <ul class="list-unstyle">
-       <li> Barcelona </li>
-        <li>  <%= link_to("http://www.googlemaps.com/maps/place/Algeciras") do %>
-        <i class="fa fa-map-marker" aria-hidden="true"> </i> <%=  "Ink Studio Gracia" %>
+       <li> <%= appointment.artist.location %> </li>
+        <li>  <%= link_to("http://maps.google.com/maps?q=#{appointment.artist.latitude},#{appointment.artist.longitude}") do %>
+        <i class="fa fa-map-marker" aria-hidden="true"> </i>  See Location
        <% end %> </li>
-        <br>
-        <li> <%= link_to("http://localhost:3000/artists/167") do %>
-        <i class="fa fa-user" aria-hidden="true"></i> <p>  See Artist's work </p> </li>
+        <li> <%= link_to appointment.artist do %>
+        <i class="fa fa-user" aria-hidden="true"></i> <p>  Tatmaster profile </p> </li>
+        <% end %>
+         <li> <%= link_to ("https://www.instagram.com/explore/tags/#{appointment.artist.name}") do %>
+        <i class="fa fa-instagram" aria-hidden="true"></i> <p>  Work on Instagram </p> </li>
         <% end %>
         </ul>
         </div>
@@ -33,7 +37,7 @@
       <ul class="list-unstyle text-center">
          <li> Awaiting Confirmation </li>
          <br>
-         <li> Quote: 250.00 $ </li>
+         <li> Hourly rate <br>  $<%= appointment.artist.rate %>.00 </li>
 
         </ul>
       </div>
@@ -42,39 +46,41 @@
 </div>
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <div class="order-description"> <h4>Order description: </h4> <br>
+   <!--  <div class="order-description"> <h4>Order description: </h4> <br>
     This is a really cool tattoo that will change my life. I hope to get
     a lot of attention, the attention I've always been
     neglected
-    </div>
+    </div> -->
     <div class="sketches">
     <h4> Your Sketches </h4>
     <div class="sketches-collection text-center">
-      <img src="http://www.unsplash.it/200/140" alt="">
-      <img src="http://www.unsplash.it/200/140" alt="">
-      <img src="http://www.unsplash.it/200/140" alt="">
-      <img src="http://www.unsplash.it/200/140" alt="">
+    <%= link_to appointment.photo.path do %>
+      <%= cl_image_tag appointment.photo.path, width: 200, height: 150, crop: :fill  %>
+      <% end %>
     </div>
     <br>
     <div class="sketches-button">
-      <a class="waves-effect waves-teal btn"> Upload Sketch </a>
-      <a class="waves-effect waves-teal btn"> Contact Artist </a>
+      <%= simple_form_for [appointment.artist, appointment] do |f| %>
+       <%= f.input :photo, as: :attachinary, label: "Upload Sketch", label_html: { id: 'attachment', class: "waves-effect waves-teal btn"} %>
+       <% end %>
+      <%= link_to "Contact Artist", ("mailto:#{appointment.artist.name}@tatmaster.com"), class: "waves-effect waves-teal btn" %>
     </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="edit-cancel">
+        <%= link_to "Delete", artist_appointment_path(appointment.artist, appointment), method: :delete  %>
           <a class="btn-flat">Edit</a>
           <a class="btn-flat">Delete</a>
       </div>
     </div>
   </div>
 </div>
+  <% end %>
 
 
 
-<!--
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2 text-center">
 
@@ -89,6 +95,6 @@
   </div>
 </div>
 
-</div> -->
+</div>
 
 
