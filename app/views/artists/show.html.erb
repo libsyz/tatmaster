@@ -23,8 +23,12 @@
 
 
           <h4>About <%= @artist.name %></h4>
-          <p><%= Faker::Lorem.paragraph %></p>
-          <a class="waves-effect waves-light btn" href="#modal1">Book an appointment</a>
+
+          <p><%= @artist.info %></p>
+          <a href="#" class="btn btn-lg btn-success"
+          data-toggle="modal"
+          data-target="#basicModal">Book an appointment</a>
+
         </div>
       </div>
     </div>
