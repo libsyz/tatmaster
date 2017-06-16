@@ -32,3 +32,24 @@
   border: 1px solid transparent;
 }
 
+.image-squre{
+  height: 110px;
+  width: 110px;
+}
+
+.image-rect{
+  height: 125px;
+  width: 150px;
+}
+
+
+
+.link-black{
+  color: black;
+}
+
+a.link-black:hover{
+  text-decoration: none;
+  color: black;
+}
+
