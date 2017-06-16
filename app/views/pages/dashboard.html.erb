@@ -61,7 +61,7 @@
     <br>
     <div class="sketches-button">
       <%= simple_form_for [appointment.artist, appointment] do |f| %>
-       <%= f.input :photo, as: :attachinary, label: "Upload Sketch", label_html: { id: 'attachment', class: "waves-effect waves-teal btn"} %>
+       <%= f.input :photo, as: :attachinary, label: "Upload Sketch" %>
        <% end %>
       <%= link_to "Contact Artist", ("mailto:#{appointment.artist.name}@tatmaster.com"), class: "waves-effect waves-teal btn" %>
     </div>
@@ -71,8 +71,8 @@
     <div class="col-sm-8 col-sm-offset-2">
       <div class="edit-cancel">
         <%= link_to "Delete", artist_appointment_path(appointment.artist, appointment), method: :delete  %>
-          <a class="btn-flat">Edit</a>
-          <a class="btn-flat">Delete</a>
+<!--           <a class="btn-flat">Edit</a>
+ -->          <!-- <a class="btn-flat">Delete</a> -->
       </div>
     </div>
   </div>
@@ -80,15 +80,6 @@
   <% end %>
 
 
-
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2 text-center">
-
-    <% @appointments.each do |appointment| %>
-    <p>You have appointment with <%= appointment.artist.name %></p>
-    <p>Date of appointment: <%= appointment.appointment_date %></p>
-    <p>Time of appointment: <%= appointment.appointment_time %></p>
-    <p>Status: <%= appointment.status %></p>
     <p> Sketch: <%= cl_image_tag appointment.photo.path, width: 200, height: 300, crop: :fill %> </p>
     <% end %>
 
