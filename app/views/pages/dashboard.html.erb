@@ -13,21 +13,27 @@
     <div class="artist-info">
       <div class="artist-details">
         <div class="artist">
-          <img src="http://www.unsplash.it/50/50" class="img-circle" alt="">
+          <img src="http://www.unsplash.it/200/200" class="avatar-xl" alt="">
           Artist Name
         </div>
         <div class="details text-center">
         <ul class="list-unstyle">
        <li> Barcelona </li>
-       <li> <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i> <p>Ink Studio Gracia  </p> </a> </li>
-       <li> <a href=""> <i class="fa fa-user" aria-hidden="true"></i> <p>  See Artist's work </p> </a> </li>
+        <li>  <%= link_to("http://www.googlemaps.com/maps/place/Algeciras") do %>
+        <i class="fa fa-map-marker" aria-hidden="true"> </i> <%=  "Ink Studio Gracia" %>
+       <% end %> </li>
+        <br>
+        <li> <%= link_to("http://localhost:3000/artists/167") do %>
+        <i class="fa fa-user" aria-hidden="true"></i> <p>  See Artist's work </p> </li>
+        <% end %>
         </ul>
         </div>
       </div>
       <div class="appointment-status">
-      <ul class="list-unstyle">
-         <li> Status: Pending </li>
-         <li> Quote: 250 $ </li>
+      <ul class="list-unstyle text-center">
+         <li> Awaiting Confirmation </li>
+         <br>
+         <li> Quote: 250.00 $ </li>
 
         </ul>
       </div>
