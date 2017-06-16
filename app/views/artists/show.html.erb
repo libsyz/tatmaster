@@ -24,9 +24,7 @@
 
           <h4>About <%= @artist.name %></h4>
           <p><%= Faker::Lorem.paragraph %></p>
-          <a href="#" class="btn btn-lg btn-success"
-          data-toggle="modal"
-          data-target="#basicModal">Book an appointment</a>
+          <a class="waves-effect waves-light btn" href="#modal1">Book an appointment</a>
         </div>
       </div>
     </div>
@@ -61,36 +59,24 @@
 </div>
 
 
-<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
-        <h4 class="modal-title" id="myModalLabel">Book an appointment</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row form-appointment">
-          <div class="col-xs-4 col-xs-offset-4">
-            <%= simple_form_for [@artist, @appointment] do |f| %>
-            <%= f.input :appointment_date, as: :string, input_html: { class: 'datepicker' } %>
-            <div class="btn-group" data-toggle="buttons">
-              <%= f.collection_radio_buttons :appointment_time, @time_slots, :first, :last, item_wrapper_class: 'btn btn-sm btn-default' %>
-            </div>
-
-            <%= f.input :photo, as: :attachinary %>
-
-            <br><br>
-            <%= f.button :submit, class: "btn btn-primary" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <%= simple_form_for [@artist, @appointment] do |f| %>
+    <%= f.input :appointment_date, as: :string, input_html: { class: 'datepicker' } %>
+    <div class="btn-group" data-toggle="buttns">
+      <%= f.collection_radio_buttons :appointment_time, @time_slots, :first, :last, item_wrapper_class: 'with-gap' %>
     </div>
+
+    <%= f.input :photo, as: :attachinary %>
+
+    <br><br>
+    <%= f.button :submit, class: "btn-search btn-primary" %>
+    <% end %>
   </div>
 </div>
+
+
+
 
 
 
@@ -119,10 +105,10 @@
 <% content_for(:after_js) do %>
 <script type="text/javascript">
   $(document).ready(function(){
-    $('.datepicker').datepicker({
+    $('.datepicker').pickadate({
       weekStart: 1,
       todayBtn: true,
-      startDate: "today",
+      min: Date.now(),
       todayHighlight: true,
       format: "dd/mm/yyyy"
     });
