@@ -23,3 +23,44 @@
 .select-wrapper span.caret {
   display: none;
 }
+
+.top-artist-card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+}
+.top-artist {
+  position: absolute;
+  left: 15px;
+  top: 40px;
+}
+
+.top-artist-city {
+  position: absolute;
+  bottom: -10px;
+  left: 40px;
+}
+
+.top-artist-name {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+}
+
+.top-artist-tattoo {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  width: 100px;
+}
+// .card-description h2 {
+//   font-size: 24px;
+// }
+// .card-description p {
+//   font-size: 13px;
+//   }
+body{
+  background-color: #f9f9f9;
+}
