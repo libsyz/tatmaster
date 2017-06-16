@@ -19,20 +19,25 @@
 
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-4 text-center">
-      <h2>Welcome</h2>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :email,  required: true%>
-      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      <%= f.input :password_confirmation, required: true %>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+  <div class="col s12 margin-top-100px">
+  <div class="card-sign-in z-depth-2">
+      <div class="card-sign-in-header">
+        <p>Welcome</p>
       </div>
-      <% end %>
-
-      <a href="/users/auth/facebook">Sign in with Facebook</a><br />
+      <div class="card-sign-in-body center-align">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :email,  required: true%>
+        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        <%= f.input :password_confirmation, required: true %>
+        <div class="form-actions margin-top-20">
+          <%= f.button :submit, "Sign up" %>
+        </div>
+        <% end %>
+        <div class="margin-top-20">
+          <a href="/users/auth/facebook"><img src="https://rewards.meritushotels.com/img/420GNbXtI43K6/images/facebook-login-blue.png" width="200px"/></a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
