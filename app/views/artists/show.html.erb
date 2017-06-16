@@ -67,9 +67,9 @@
   <div class="modal-content">
     <%= simple_form_for [@artist, @appointment] do |f| %>
     <%= f.input :appointment_date, as: :string, input_html: { class: 'datepicker' } %>
-    <div class="btn-group" data-toggle="buttns">
-      <%= f.collection_radio_buttons :appointment_time, @time_slots, :first, :last, item_wrapper_class: 'with-gap' %>
-    </div>
+
+    <%= f.collection_radio_buttons :appointment_time, @time_slots, :first, :last, item_wrapper_class: 'with-gap' %>
+
 
     <%= f.input :photo, as: :attachinary %>
 
